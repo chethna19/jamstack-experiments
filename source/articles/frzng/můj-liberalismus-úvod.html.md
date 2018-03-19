@@ -1,6 +1,7 @@
 ---
 title: 'Můj liberalismus: Úvod'
-date: 2018-03-19
+date: 2018-03-19T22:00:00Z
+user: frzng
 ---
 První příspěvek na osobní blog je vždy menším rituálem a osobní úlevou z toho, že už to konečně přišlo a celý svět mně teď padne k nohám. O nic menšího mi samozřejmě nejde. Nicméně pokud se tak nestane, půjdu s klidem dál bez jakékoli jizvy nebo šrámu. Radost ze sdílení a souboje myšlenek mám vždy největší v okruhu svých nejbližších a tak už to asi vždy zůstane.
 

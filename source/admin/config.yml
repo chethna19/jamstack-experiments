@@ -26,9 +26,11 @@ collections:
     label: "Articles"
     folder: "source/articles"
     create: true
-    slug: "{{username}}/{{slug}}"
+    slug: "{{user}}/{{slug}}.html"
     fields:
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Author’s Username", name: "user", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
 
 media_folder: source/uploads
