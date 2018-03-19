@@ -1,0 +1,5 @@
+backend:
+  name: git-gateway
+  branch: middleman
+media_folder: source/uploads
+public_folder: /uploads
