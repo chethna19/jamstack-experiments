@@ -47,13 +47,12 @@ page '/*.txt', layout: false
 # Proxy pages
 # https://middlemanapp.com/advanced/dynamic-pages/
 
-# proxy(
-#   '/this-page-has-no-template.html',
-#   '/template-file.html',
-#   locals: {
-#     which_fake_page: 'Rendering a fake page with a local variable'
-#   },
-# )
+YAML.load(app.root_path.join('data', 'users.yml').read).each do |user|
+  proxy "/~#{user['username']}/index.html",
+        '/user.html',
+        locals: { user: user },
+        ignore: true
+end
 
 # Helpers
 # Methods defined in the helpers block are available in templates

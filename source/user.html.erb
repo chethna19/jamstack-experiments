@@ -1,0 +1,31 @@
+---
+# User’s homepage displaying her or his articles.
+# © 2018 Filip Zrůst
+#
+# This file is part of JAMstack Experiments.
+#
+# JAMstack Experiments is free software: you can redistribute it
+# and/or modify it under the terms of the GNU Affero General Public
+# License as published by the Free Software Foundation, either
+# version 3 of the License, or any later version.
+#
+# JAMstack Experiments is distributed in the hope that it will be
+# useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+# of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public
+# License along with JAMstack Experiments. If not,
+# see <http://www.gnu.org/licenses/>.
+---
+<h1><%= user['title'] %><% if user['subtitle'] %> <small>(<%= user['subtitle'] %>)</small><% end %></h1>
+
+<% articles = blog.articles.select {|a| a.data.user == user['username'] } %>
+<% unless articles.empty? %>
+<h2>Articles</h2>
+<ul>
+  <% articles.each do |article| %>
+    <li><a href="<%= article.url %>"><%= article.title %></a></li>
+  <% end %>
+</ul>
+<% end %>
