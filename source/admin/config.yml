@@ -20,5 +20,16 @@
 backend:
   name: git-gateway
   branch: middleman
+
+collections:
+  - name: "articles"
+    label: "Articles"
+    folder: "source/articles"
+    create: true
+    slug: "{{username}}/{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
 media_folder: source/uploads
 public_folder: /uploads

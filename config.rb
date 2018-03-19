@@ -28,6 +28,11 @@ activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
 
+activate :blog do |blog|
+  blog.sources = 'articles/{user}/{title}.html'
+  blog.permalink = '~{user}/{title}.html'
+end
+
 # Layouts
 # https://middlemanapp.com/basics/layouts/
 
