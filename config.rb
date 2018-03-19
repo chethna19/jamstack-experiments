@@ -29,7 +29,7 @@ activate :autoprefixer do |prefix|
 end
 
 activate :blog do |blog|
-  blog.sources = 'articles/{user}/{title}.html'
+  blog.sources = 'articles/{user}-{title}.html'
   blog.permalink = '~{user}/{title}.html'
 end
 
