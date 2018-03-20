@@ -21,7 +21,7 @@ backend:
   name: git-gateway
   branch: jekyll
 
-media_folder: "img/uploads"
+media_folder: "assets/uploads"
 
 collections:
   - name: "post"
@@ -38,4 +38,4 @@ collections:
          required: false}
     meta:
       - {label: "Publish Date", name: "date", widget: "datetime",
-         format: "YYYY-MM-DD hh:mm:ss"}
+         format: "YYYY-MM-DD hh:mm:ss ZZ"}
