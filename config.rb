@@ -59,6 +59,23 @@ page '/*.txt', layout: false
 #   },
 # )
 
+# Imports
+node_modules_dir = app.source_dir.join('..', 'node_modules')
+
+import_file node_modules_dir.join('netlify-cms', 'dist', 'cms.css').to_s,
+            "#{app.config.css_dir}/cms.css"
+import_file node_modules_dir.join('netlify-cms', 'dist', 'cms.js').to_s,
+            "#{app.config.js_dir}/cms.js"
+import_file node_modules_dir.join('netlify-cms', 'dist', 'cms.js.map').to_s,
+            "#{app.config.js_dir}/cms.js.map"
+
+import_file node_modules_dir.join('netlify-identity-widget', 'build',
+                                  'netlify-identity-widget.js').to_s,
+            "#{app.config.js_dir}/netlify-identity-widget.js"
+import_file node_modules_dir.join('netlify-identity-widget', 'build',
+                                  'netlify-identity-widget.js.map').to_s,
+            "#{app.config.js_dir}/netlify-identity-widget.js.map"
+
 # Helpers
 # Methods defined in the helpers block are available in templates
 # https://middlemanapp.com/basics/helper-methods/
