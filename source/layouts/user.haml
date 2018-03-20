@@ -18,17 +18,18 @@
 # License along with JAMstack Experiments. If not,
 # see <http://www.gnu.org/licenses/>.
 ---
-<% user = current_article.data %>
-<% wrap_layout :layout do %>
-  <h1><%= user.heading %><% if user.subheading %> <small>(<%= user.subheading %>)</small><% end %></h1>
+- user = current_article.data
+= wrap_layout :layout do
+  %h1
+    = user.heading
+    - if user.subheading
+      = ' '
+      %small= "(#{user.subheading})"
 
-  <% articles = blog.articles.select {|a| a.data.user == user.title } %>
-  <% if user.articles and not articles.empty? %>
-  <h2>Articles</h2>
-  <ul>
-    <% articles.each do |article| %>
-      <li><a href="<%= article.url %>"><%= article.title %></a></li>
-    <% end %>
-  </ul>
-  <% end %>
-<% end %>
+  - articles = blog.articles.select {|a| a.data.user == user.title }
+  - if user.articles and not articles.empty?
+    %h2 Articles
+    %ul
+      - articles.each do |article|
+        %li
+          %a{href: article.url}= article.title
