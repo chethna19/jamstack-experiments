@@ -23,7 +23,7 @@
   <h1><%= user.heading %><% if user.subheading %> <small>(<%= user.subheading %>)</small><% end %></h1>
 
   <% articles = blog.articles.select {|a| a.data.user == user.title } %>
-  <% unless articles.empty? %>
+  <% if user.articles and not articles.empty? %>
   <h2>Articles</h2>
   <ul>
     <% articles.each do |article| %>
