@@ -20,9 +20,9 @@
 ---
 <% user = current_article.data %>
 <% wrap_layout :layout do %>
-  <h1><%= user.title %><% if user.subtitle %> <small>(<%= user.subtitle %>)</small><% end %></h1>
+  <h1><%= user.heading %><% if user.subheading %> <small>(<%= user.subheading %>)</small><% end %></h1>
 
-  <% articles = blog.articles.select {|a| a.data.user == user.username } %>
+  <% articles = blog.articles.select {|a| a.data.user == user.title } %>
   <% unless articles.empty? %>
   <h2>Articles</h2>
   <ul>
