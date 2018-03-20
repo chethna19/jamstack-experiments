@@ -64,3 +64,10 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+keep_files:
+  - assets/cms.js
+  - assets/cms.js.map
+  - assets/cms.css
+  - assets/netlify-identity-widget.js
+  - assets/netlify-identity-widget.js.map

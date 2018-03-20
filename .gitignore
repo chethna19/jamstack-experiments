@@ -3,3 +3,4 @@ _site/
 .jekyll-metadata
 .users.yml
 .bundle/
+node_modules/
