@@ -26,7 +26,8 @@
       = ' '
       %small= "(#{user.subheading})"
 
-  - articles = blog.articles.select {|a| a.data.user == user.title }
+  %pre
+  - articles = blog(:articles).articles.select {|a| a.data.user == user.title }
   - if user.articles and not articles.empty?
     %h2 Articles
     %ul

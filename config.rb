@@ -26,13 +26,13 @@ activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
 
-activate :blog do |blog|
+activate :blog, name: :users do |blog|
   blog.layout = 'user'
   blog.sources = 'users/{user}.html'
   blog.permalink = '~{user}/index.html'
 end
 
-activate :blog do |blog|
+activate :blog, name: :articles do |blog|
   blog.sources = 'articles/{user}-{title}.html'
   blog.permalink = '~{user}/{title}.html'
 end
