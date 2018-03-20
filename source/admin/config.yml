@@ -30,7 +30,8 @@ collections:
     fields:
       - {label: "Username", name: "title", widget: "string"}
       - {label: "Homepage Title", name: "heading", widget: "string"}
-      - {label: "Homepage Subtitle", name: "subheading", widget: "string"}
+      - {label: "Homepage Subtitle", name: "subheading", widget: "string",
+         required: false}
       - {label: "Show articles?", name: "articles", widget: "boolean"}
       - {label: "Created at", name: "date", widget: "datetime"}
 
