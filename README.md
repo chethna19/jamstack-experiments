@@ -10,5 +10,5 @@ License
 
 All experiments are free software licensed under a [AGPL][AGPL-3.0-or-later]. See `COPYING` file in each branch for copying conditions.
 
-[middleman-branch]: tree/middleman "middleman branch"
+[middleman-branch]: https://github.com/frzng/jamstack-experiments/tree/middleman "middleman branch"
 [AGPL-3.0-or-later]: https://www.gnu.org/licenses/agpl.html "GNU Affero General Public License version 3, or any later version"
