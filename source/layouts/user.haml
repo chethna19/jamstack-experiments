@@ -22,7 +22,7 @@
 = wrap_layout :layout do
   %h1
     = user.heading
-    - if user.subheading
+    - if user.subheading and not user.subheading.empty?
       = ' '
       %small= "(#{user.subheading})"
 
