@@ -26,7 +26,7 @@ collections:
     label: "Users"
     folder: "source/users"
     create: true
-    slug: "{{user}}"
+    slug: "{{title}}.html"
     fields:
       - {label: "Username", name: "title", widget: "string"}
       - {label: "Homepage Title", name: "heading", widget: "string"}
