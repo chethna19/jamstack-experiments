@@ -29,6 +29,12 @@ activate :autoprefixer do |prefix|
 end
 
 activate :blog do |blog|
+  blog.layout = 'user'
+  blog.sources = 'users/{user}.html'
+  blog.permalink = '~{user}/index.html'
+end
+
+activate :blog do |blog|
   blog.sources = 'articles/{user}-{title}.html'
   blog.permalink = '~{user}/{title}.html'
 end
@@ -47,12 +53,13 @@ page '/*.txt', layout: false
 # Proxy pages
 # https://middlemanapp.com/advanced/dynamic-pages/
 
-YAML.load(app.root_path.join('data', 'users.yml').read).each do |user|
-  proxy "/~#{user['username']}/index.html",
-        '/user.html',
-        locals: { user: user },
-        ignore: true
-end
+# proxy(
+#   '/this-page-has-no-template.html',
+#   '/template-file.html',
+#   locals: {
+#     which_fake_page: 'Rendering a fake page with a local variable'
+#   },
+# )
 
 # Helpers
 # Methods defined in the helpers block are available in templates

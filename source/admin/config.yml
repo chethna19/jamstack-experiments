@@ -22,6 +22,18 @@ backend:
   branch: middleman
 
 collections:
+  - name: "users"
+    label: "Users"
+    folder: "source/users"
+    create: true
+    slug: "{{user}}"
+    fields:
+      - {label: "Username", name: "username", widget: "string"}
+      - {label: "Homepage Title", name: "title", widget: "string"}
+      - {label: "Homepage Subtitle", name: "subtitle", widget: "string"}
+      - {label: "Show articles?", name: "acticles", widget: "boolean"}
+      - {label: "Created at", name: "date", widget: "datetime"}
+
   - name: "articles"
     label: "Articles"
     folder: "source/articles"
@@ -30,7 +42,9 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Author’s Username", name: "user", widget: "string"}
+      - {label: "Author", name: "user", widget: "relation",
+         collection: "users", searchFields: ["username"],
+         valueField: "username"}
       - {label: "Body", name: "body", widget: "markdown"}
 
 media_folder: source/uploads
