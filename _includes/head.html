@@ -18,8 +18,9 @@ You should have received a copy of the GNU Affero General Public
 License along with JAMstack Experiments. If not,
 see <http://www.gnu.org/licenses/>.
 
-This file comes from Netlify template for Jekyll,
+This file originates from Netlify template for Jekyll,
 see <https://github.com/netlify-templates/jekyll-netlify-cms>.
+Google Analytics were removed.
 {% endcomment %}
 
 <head>
@@ -29,8 +30,5 @@ see <https://github.com/netlify-templates/jekyll-netlify-cms>.
   {% seo %}
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   {% feed_meta %}
-  {% if jekyll.environment == 'production' and site.google_analytics %}
-    {% include google-analytics.html %}
-  {% endif %}
   <script src="https://identity-js.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
