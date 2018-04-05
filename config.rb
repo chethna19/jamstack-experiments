@@ -69,13 +69,6 @@ import_file node_modules_dir.join('netlify-cms', 'dist', 'cms.js').to_s,
 import_file node_modules_dir.join('netlify-cms', 'dist', 'cms.js.map').to_s,
             "#{app.config.js_dir}/cms.js.map"
 
-import_file node_modules_dir.join('netlify-identity-widget', 'build',
-                                  'netlify-identity-widget.js').to_s,
-            "#{app.config.js_dir}/netlify-identity-widget.js"
-import_file node_modules_dir.join('netlify-identity-widget', 'build',
-                                  'netlify-identity-widget.js.map').to_s,
-            "#{app.config.js_dir}/netlify-identity-widget.js.map"
-
 # Helpers
 # Methods defined in the helpers block are available in templates
 # https://middlemanapp.com/basics/helper-methods/
