@@ -18,7 +18,8 @@
 # see <http://www.gnu.org/licenses/>.
 
 backend:
-  name: git-gateway
+  name: github
+  repo: frzng/jamstack-experiments
   branch: middleman
 
 collections:
