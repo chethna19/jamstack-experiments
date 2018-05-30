@@ -1,7 +1,7 @@
-const AWS = require('aws-sdk')
-const s3 = new AWS.S3()
-
 exports.handler = function(event, context, callback) {
+  const AWS = require('aws-sdk')
+  const s3 = new AWS.S3()
+
   s3.putObject({
     Bucket: process.env['TEST_BUCKET'],
     Key: 'event.json',
