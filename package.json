@@ -4,6 +4,7 @@
   "private": true,
   "description": "JAMstack experiment with Middleman and Netlify. The main tool is Middleman not Node.",
   "dependencies": {
+    "aws-sdk": "^2.248.1",
     "netlify-cms": "^1.3.5",
     "netlify-identity-widget": "^1.4.11"
   },
