@@ -1,6 +1,4 @@
-exports.handler = function(event, context, callback) {
-  callback(null, {
-    "statusCode": 200,
-    "body": JSON.stringify(event, null, 2)
-  })
+exports.handler = function submissionCreated(event, context, callback) {
+  const submission = JSON.parse(event["body"])
+  console.log("Submission:", submission)
 }
