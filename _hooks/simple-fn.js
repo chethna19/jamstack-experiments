@@ -1,6 +1,7 @@
 exports.handler = function simpleFn(event, context, callback) {
+  console.log("Event: %j", event);
+  console.log("Context: %j", context);
   callback(null, {
-    "statusCode": 200,
-    "body": JSON.stringify(event, null, 2)
+    "statusCode": 200
   })
 }
