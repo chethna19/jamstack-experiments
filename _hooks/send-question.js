@@ -54,7 +54,7 @@ function redir(callback, code) {
     "headers": {
       "Location": process.env["QUESTION_FORM_URL"] +
 	(code ? `#${code}` : "")
-    }
+    },
     "body": ""
   })
 }
