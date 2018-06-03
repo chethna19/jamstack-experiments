@@ -108,7 +108,7 @@ function sendQuestion(event, context, callback) {
  */
 function sendEmail(replyTo, text, callback) {
   const data = querystring.stringify({
-    from: `JAMstack Experiments Form <form@${process.env["MAILGUN_DOMAIN"]}`,
+    from: `JAMstack Experiments Form <form@${process.env["MAILGUN_DOMAIN"]}>`,
     to: process.env["QUESTION_FORM_TO"],
     subject: "Question from JAMstack Experiments",
     "h:Reply-To": replyTo,
