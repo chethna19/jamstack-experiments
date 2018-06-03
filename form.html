@@ -7,8 +7,11 @@
     <title>Netlify Forms Test</title>
   </head>
   <body>
-    <form name="test" method="POST" netlify>
-      <label>Submission number: <input name="no" type="number"></label>
+    <form method="POST" action="/.netlify/functions/send-question" accept-charset="UTF-8">
+      <input name="utf8" type="hidden" value="✓">
+      <p><label>Name: <input name="name"></label></p>
+      <p><label>Email: <input type="email" name="email"></label></p>
+      <p><label>Question: <input name="q"></label></p>
       <input type="submit">
     </form>
 </html>
