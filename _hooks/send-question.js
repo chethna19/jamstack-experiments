@@ -162,7 +162,7 @@ function sendEmail(replyTo, text, callback) {
   }, (err, data) => {
     if (err) {
       console.error("Error while sending email via AWS SES:", err)
-      redir(callback, "fail")
+      return redir(callback, "fail")
     }
 
     redir(callback, "sent")
