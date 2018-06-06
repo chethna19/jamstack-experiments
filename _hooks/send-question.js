@@ -12,7 +12,7 @@
  *
  * Configuration is via environment variable:
  *
- * - QUESTION_FORM_URL: URL to HTML question form
+ * - QUESTION_FORM_URL: URL of HTML question form
  * - QUESTION_FORM_FROM: email address from which question will be
  *   sent
  * - QUESTION_FORM_TO: email address to which question will be
