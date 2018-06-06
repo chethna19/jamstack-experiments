@@ -37,7 +37,7 @@ const ses = new AWS.SES({
 var NetlifyCallback
 
 /**
- * Return just type and subtype from Content-Type HTTP header value.
+ * Returns just type and subtype from Content-Type HTTP header value.
  *
  * @param {string|undefined} headerValue
  * @return {string}
@@ -47,7 +47,12 @@ function parseContentType(headerValue) {
 }
 
 /**
- * Return name encoded using syntax of encoded-words from MIME.
+ * Returns name encoded using syntax of encoded-words from MIME.
+ *
+ * This is a very lazy developer’s approach defaulting to BASE64
+ * without trying anything else and shouldn’t be considered
+ * production-ready. MIME suggests what to use when, get familiar with
+ * or use some nice library.
  *
  * @param {string} name
  * @return {string}
@@ -62,7 +67,7 @@ function mimeEncode(name) {
 }
 
 /**
- * Call callback so that it redirects to question form URL.
+ * Calls the callback so that it redirects to question form URL.
  *
  * Optional code can be specified. This code is set as a fragment part
  * of the redirect location.
@@ -76,8 +81,7 @@ function redir(callback, code) {
     "headers": {
       "Location": process.env["QUESTION_FORM_URL"] +
 	(code ? `#${code}` : "")
-    },
-    "body": ""
+    }
   })
 }
 
