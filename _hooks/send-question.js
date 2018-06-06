@@ -118,7 +118,7 @@ function sendQuestion(event, context, callback) {
 
   sendEmail(
     params["name"] ?
-      `"${params["name"]}" <${params["email"]}>` :
+      `${mimeEncode(params["name"])} <${params["email"]}>` :
       params["email"],
     params["question"],
     callback
