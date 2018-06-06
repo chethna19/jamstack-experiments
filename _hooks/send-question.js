@@ -47,6 +47,21 @@ function parseContentType(headerValue) {
 }
 
 /**
+ * Return name encoded using syntax of encoded-words from MIME.
+ *
+ * @param {string} name
+ * @return {string}
+ * @see {@link https://tools.ietf.org/html/rfc2047 RFC 2047}
+ */
+function mimeEncode(name) {
+  return (
+    "=?utf-8?b?" +
+    Buffer.from(name).toString('base64') +
+    "?="
+  )
+}
+
+/**
  * Call callback so that it redirects to question form URL.
  *
  * Optional code can be specified. This code is set as a fragment part
@@ -103,7 +118,7 @@ function sendQuestion(event, context, callback) {
 
   sendEmail(
     params["name"] ?
-      `"${params["name"]}" <${params["email"]}>` :
+      `${mimeEncode(params["name"])} <${params["email"]}>` :
       params["email"],
     params["question"],
     callback
