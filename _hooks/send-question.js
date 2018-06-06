@@ -89,6 +89,13 @@ function sendQuestion(event, context, callback) {
   }
 
   const params = querystring.parse(event["body"])
+
+  if (process.env["QUESTION_FORM_HONEYPOT"] &&
+      params[process.env["QUESTION_FORM_HONEYPOT"]]) {
+    console.info("Bot trapped in honeypot")
+    return callback()
+  }
+
   const errs = []
   if (!params["email"]) errs.push("no-email")
   if (!params["question"]) errs.push("no-question")
