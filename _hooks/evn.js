@@ -5,7 +5,7 @@ function getFiles(dir) {
     fs.readdir(dir, (err, files) => {
       if (err) return rej(err)
 
-      res(files.map(f => dir + "/" + f))
+      res(files.map(f => dir + f))
     })
   })
 }
@@ -21,9 +21,18 @@ function getBinaries(event, context, callback) {
       "headers": {
         "Content-Type": "text/plain; charset=utf8"
       },
-      "body": allFiles.
-        reduce((flat, files) => flat.concat(files), []).
-        join("\n")
+      "body": "" +
+        "Environment variables:\n" +
+          process.env.
+            entries().
+            map((name, value) => name + " = " + value).
+            join("\n") +
+        "\n" +
+        "Binaries:\n" +
+          allFiles.
+            reduce((flat, files) => flat.concat(files), []).
+            join("\n") +
+          "\n"
     })
   }).catch(callback)
 }
