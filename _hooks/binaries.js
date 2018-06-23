@@ -12,14 +12,14 @@ function getFiles(dir) {
 
 function getBinaries(event, context, callback) {
   Promise.all(
-    process.env["PATH"]).
+    process.env["PATH"].
       split(":").
       map(getFiles)
   ).then((allFiles) => {
     callback(null, {
       "statusCode": 200,
       "headers": {
-        "Content-Type": "text/plain; charset=utf8")
+        "Content-Type": "text/plain; charset=utf8"
       },
       "body": allFiles.
         reduce((flat, files) => flat.concat(files), []).
