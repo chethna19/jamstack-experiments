@@ -5,7 +5,7 @@ function getFiles(dir) {
     fs.readdir(dir, (err, files) => {
       if (err) return rej(err)
 
-      res(files)
+      res(dir + "/" + files)
     })
   })
 }
