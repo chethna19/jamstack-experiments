@@ -23,8 +23,7 @@ function getBinaries(event, context, callback) {
       },
       "body": "" +
         "Environment variables:\n" +
-          process.env.
-            entries().
+          Object.entries(process.env).
             map((name, value) => name + " = " + value).
             join("\n") +
         "\n" +
