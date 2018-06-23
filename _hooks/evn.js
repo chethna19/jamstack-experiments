@@ -10,7 +10,7 @@ function getFiles(dir) {
   })
 }
 
-function getBinaries(event, context, callback) {
+function env(event, context, callback) {
   Promise.all(
     process.env["PATH"].
       split(":").
@@ -24,8 +24,9 @@ function getBinaries(event, context, callback) {
       "body": "" +
         "Environment variables:\n" +
           Object.entries(process.env).
-            map((name, value) => name + " = " + value).
+            map(([name, value]) => name + " = " + value).
             join("\n") +
+        "\n" +
         "\n" +
         "Binaries:\n" +
           allFiles.
@@ -36,4 +37,4 @@ function getBinaries(event, context, callback) {
   }).catch(callback)
 }
 
-exports.handler = getBinaries
+exports.handler = env
