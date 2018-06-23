@@ -1,11 +1,12 @@
 const fs = require("fs")
+const path = require("path")
 
 function getFiles(dir) {
   return new Promise((res, rej) => {
     fs.readdir(dir, (err, files) => {
       if (err) return rej(err)
 
-      res(files.map(f => dir + f))
+      res(files.map(f => path.join(dir, f)))
     })
   })
 }
